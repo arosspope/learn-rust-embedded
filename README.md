@@ -1,5 +1,6 @@
-# learn-rust-embedded
-Learning embedded development in rust with the discovery book.
+
+Learning embedded development in rust with the [discovery book](https://rust-embedded.github.io/discovery).
+
 
 ## Running
 
