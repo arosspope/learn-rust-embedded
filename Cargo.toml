@@ -1,0 +1,16 @@
+[package]
+authors = ["arosspope <andrew.pope456@gmail.com>"]
+edition = "2018"
+name = "learn-rust-embedded"
+version = "0.0.1"
+
+[dependencies]
+aux = { path = "auxiliary" }
+
+[[bin]]
+name = "simple"
+path = "src/00-simple.rs"
+
+[[bin]]
+name = "led-flash"
+path = "src/01-led-flash.rs"
