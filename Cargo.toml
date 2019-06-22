@@ -14,3 +14,7 @@ path = "src/00-simple.rs"
 [[bin]]
 name = "led-flash"
 path = "src/01-led-flash.rs"
+
+[[bin]]
+name = "itm-hello"
+path = "src/02-hello-world.rs"
