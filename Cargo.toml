@@ -5,7 +5,13 @@ name = "learn-rust-embedded"
 version = "0.0.1"
 
 [dependencies]
-aux = { path = "auxiliary" }
+cortex-m = "0.5.6"
+panic-halt = "0.2.0"
+cortex-m-rt = "0.6.3"
+
+[dependencies.f3]
+features = ["rt"]
+version = "0.6.1"
 
 [[bin]]
 name = "simple"

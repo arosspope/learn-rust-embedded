@@ -54,6 +54,11 @@ Breakpoint 1 at 0x800018c: file src/05-led-roulette/src/main.rs, line 10.
 (gdb) quit
 ```
 
+6. Detach from the session and Quit GDB (will still execute in background):
+```
+(gdb) CTRL+Z
+```
+
 ## itmdump
 
 1. Make sure openocd + itmpdump are both running in the same directory:
