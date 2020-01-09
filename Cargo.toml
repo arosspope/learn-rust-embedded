@@ -26,5 +26,13 @@ name = "itm-hello"
 path = "src/exercises/02-hello-world.rs"
 
 [[bin]]
+name = "registers"
+path = "src/exercises/03-registers.rs"
+
+[[bin]]
+name = "raw-leds"
+path = "src/exercises/04-raw-leds.rs"
+
+[[bin]]
 name = "roulette"
 path = "src/challenges/roulette.rs"
