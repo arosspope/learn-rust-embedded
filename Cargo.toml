@@ -15,12 +15,16 @@ version = "0.6.1"
 
 [[bin]]
 name = "simple"
-path = "src/00-simple.rs"
+path = "src/exercises/00-simple.rs"
 
 [[bin]]
 name = "led-flash"
-path = "src/01-led-flash.rs"
+path = "src/exercises/01-led-flash.rs"
 
 [[bin]]
 name = "itm-hello"
-path = "src/02-hello-world.rs"
+path = "src/exercises/02-hello-world.rs"
+
+[[bin]]
+name = "roulette"
+path = "src/challenges/roulette.rs"

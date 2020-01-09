@@ -1,6 +1,30 @@
 
 Learning embedded development in rust with the [discovery book](https://rust-embedded.github.io/discovery).
 
+## Setup
+
+1. Install packages (Ubuntu 18.04)
+```
+$ apt-get install gdb-multiarch minicom openocd
+```
+
+2. udev rules
+```
+$ cat /etc/udev/rules.d/99-ftdi.rules
+...
+# FT232 - USB <-> Serial Converter
+ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", MODE:="0666"
+...
+$ cat /etc/udev/rules.d/99-openocd.rules
+...
+# STM32F3DISCOVERY rev A/B - ST-LINK/V2
+ATTRS{idVendor}=="0483", ATTRS{idProduct}=="3748", MODE:="0666"
+
+# STM32F3DISCOVERY rev C+ - ST-LINK/V2-1
+ATTRS{idVendor}=="0483", ATTRS{idProduct}=="374b", MODE:="0666"
+...
+$ sudo udevadm control --reload-rules
+```
 
 ## Running
 
@@ -67,6 +91,7 @@ Breakpoint 1 at 0x800018c: file src/05-led-roulette/src/main.rs, line 10.
 ...
 /tmp$ itmdump -F -f itm.txt
 ```
+
 2. Instruct OpenOCD to redirect the ITM output into the same file that itmdump is watching:
 ```
 (gdb) # globally enable the ITM and redirect all output to itm.txt
