@@ -8,6 +8,7 @@ version = "0.0.1"
 cortex-m = "0.5.6"
 panic-halt = "0.2.0"
 cortex-m-rt = "0.6.3"
+heapless = "*"
 
 [dependencies.f3]
 features = ["rt"]
@@ -36,3 +37,15 @@ path = "src/exercises/04-raw-leds.rs"
 [[bin]]
 name = "roulette"
 path = "src/challenges/roulette.rs"
+
+[[bin]]
+name = "raw-timer"
+path = "src/exercises/05-raw-timer.rs"
+
+[[bin]]
+name = "uart"
+path = "src/exercises/06-uart.rs"
+
+[[bin]]
+name = "reverse-echo-server"
+path = "src/challenges/reverse-echo-server.rs"

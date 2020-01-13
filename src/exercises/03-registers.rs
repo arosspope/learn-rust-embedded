@@ -12,7 +12,7 @@ use f3::hal::{delay::Delay, stm32f30x};
 
 #[entry]
 fn main() -> ! {
-    let cp = cortex_m::Peripherals::take().unwrap();
+    // let cp = cortex_m::Peripherals::take().unwrap();
     let dp = stm32f30x::Peripherals::take().unwrap();
 
     let mut rcc = dp.RCC.constrain();

@@ -29,7 +29,7 @@ fn init() -> (Delay, Leds) {
 fn main() -> ! {
     let (mut delay, mut leds): (Delay, Leds) = init();
 
-    const period_ms: u8             = 25;
+    const PERIOD_MS: u8             = 25;
 
     let total_headings              = leds.len();
 
@@ -40,7 +40,7 @@ fn main() -> ! {
     leds[(heading + 1) % total_headings].on();
 
     loop {
-        delay.delay_ms(period_ms);
+        delay.delay_ms(PERIOD_MS);
 
         match active_heading_count {
             0 => {
