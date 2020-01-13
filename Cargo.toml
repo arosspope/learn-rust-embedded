@@ -53,3 +53,8 @@ path = "src/exercises/06-uart.rs"
 [[bin]]
 name = "reverse-echo-server"
 path = "src/challenges/reverse-echo-server.rs"
+
+[[bin]]
+name = "lsm"
+path = "src/exercises/07-lsm303dlhc.rs"
+
