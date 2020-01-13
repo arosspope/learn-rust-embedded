@@ -14,6 +14,10 @@ heapless = "*"
 features = ["rt"]
 version = "0.6.1"
 
+# [dependencies.stm32f3]
+# version = "0.9.0"
+# features = ["stm32f303", "rt"]
+
 [[bin]]
 name = "simple"
 path = "src/exercises/00-simple.rs"

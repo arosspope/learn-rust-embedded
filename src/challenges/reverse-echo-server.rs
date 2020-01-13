@@ -8,7 +8,13 @@ use f3::hal::prelude::*;    // provides the memory.x layout
 use cortex_m_rt::entry;
 use cortex_m::{iprintln, peripheral::ITM};
 
-use f3::hal::{serial::Serial, stm32f30x::{self, USART1, usart1}, time::MonoTimer};
+use f3::hal::{
+    serial::Serial, 
+    stm32f30x::{self, USART1, usart1, interrupt, Interrupt},
+    time::MonoTimer
+};
+
+// For str and vector manipulation
 use core::str;
 use core::fmt::{self, Write};
 use heapless::{consts, Vec};
@@ -52,6 +58,7 @@ impl fmt::Write for SerialPort {
 
 fn init() -> &'static mut usart1::RegisterBlock {
     let dp = stm32f30x::Peripherals::take().unwrap();
+    // let cp = cortex_m::Peripherals::take().unwrap();
     
     let mut flash = dp.FLASH.constrain();
     let mut rcc = dp.RCC.constrain();
@@ -62,10 +69,15 @@ fn init() -> &'static mut usart1::RegisterBlock {
     let tx = gpioa.pa9.into_af7(&mut gpioa.moder, &mut gpioa.afrh);
     let rx = gpioa.pa10.into_af7(&mut gpioa.moder, &mut gpioa.afrh);
     
+    // Enable UART NVIC -TODO: Currently unused
+    // let nvic = &mut cp.NVIC;
+    // nvic.enable(Interrupt::USART1_EXTI25);
+    
     Serial::usart1(dp.USART1, (tx, rx), 115200.bps(), clocks, &mut rcc.apb2);
     
     unsafe { &mut *(USART1::ptr() as *mut _) }
 }
+
 
 
 #[entry]
@@ -98,3 +110,10 @@ fn main() -> ! {
         }
     }
 }
+
+//Taken from stm32f3-rust-examples
+// Also look at copterust/proving-ground/serial_redirect
+// #[interrupt]
+// fn USART1_EXTI25(){
+//     // TODO
+// }
