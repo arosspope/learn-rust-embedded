@@ -9,6 +9,8 @@ cortex-m = "0.5.6"
 panic-halt = "0.2.0"
 cortex-m-rt = "0.6.3"
 heapless = "*"
+lsm303dlhc = "0.2.0"
+m = "0.1.1"
 
 [dependencies.f3]
 features = ["rt"]
@@ -57,4 +59,8 @@ path = "src/challenges/reverse-echo-server.rs"
 [[bin]]
 name = "lsm"
 path = "src/exercises/07-lsm303dlhc.rs"
+
+[[bin]]
+name = "led-compass"
+path = "src/challenges/led-compass.rs"
 
